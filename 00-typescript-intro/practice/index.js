@@ -39,3 +39,42 @@ function add(x, y) {
 }
 console.log(add(2, 3));
 // console.log(add('2', 3));
+function greeter(person) {
+    if (person === void 0) { person = 'Stranger'; }
+    return "Hi there ".concat(person);
+}
+console.log(greeter());
+console.log(greeter('Peti'));
+function greeterNum(person) {
+    if (person === void 0) { person = 'Stranger'; }
+    return person.length;
+}
+console.log(greeterNum());
+console.log(greeterNum('Peti'));
+function random(num) {
+    if (Math.random() < 0.5) {
+        return num.toString();
+    }
+    else {
+        return num;
+    }
+}
+console.log('--- Random function ---');
+console.log(random(1));
+console.log(random(1));
+console.log(random(1));
+console.log(random(1));
+console.log(random(1));
+console.log(random(1));
+console.log(random(1));
+console.log(random(1));
+console.log('--- Random function ---');
+// Type with Array
+var inactiveUsers = [];
+// inactiveUsers.push('Zsuszi');
+var activeUsers = ['Laci'];
+// activeUsers.push(34);
+activeUsers.push('34');
+activeUsers.push('Zsuszi');
+console.log(activeUsers);
+var lotteryNums = [11, 35, 6, 44, 28];

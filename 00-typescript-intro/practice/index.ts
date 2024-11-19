@@ -57,3 +57,52 @@ function add(x: number, y: number){
 console.log(add(2, 3));
 // console.log(add('2', 3));
 
+function greeter(person: string = 'Stranger'): string{
+    return `Hi there ${person}`;
+}
+
+console.log(greeter());
+console.log(greeter('Peti'));
+
+function greeterNum(person: string = 'Stranger'): number{
+    return person.length;
+}
+
+console.log(greeterNum());
+console.log(greeterNum('Peti'));
+
+function random(num: number): number | string {
+    if(Math.random() < 0.5){
+        return num.toString();
+    }
+    else{
+        return num;
+    }
+}
+
+console.log('--- Random function ---');
+console.log(random(1));
+console.log(random(1));
+console.log(random(1));
+console.log(random(1));
+console.log(random(1));
+console.log(random(1));
+console.log(random(1));
+console.log(random(1));
+console.log('--- Random function ---');
+
+// Type with Array
+
+const inactiveUsers: [] = [];
+
+// inactiveUsers.push('Zsuszi');
+
+const activeUsers: string[] = ['Laci'];
+// activeUsers.push(34);
+activeUsers.push('34');
+activeUsers.push('Zsuszi');
+
+console.log(activeUsers);
+
+const lotteryNums: Array<number> = [11, 35, 6, 44, 28];
+
