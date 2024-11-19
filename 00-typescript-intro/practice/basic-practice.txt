@@ -1,0 +1,21 @@
+Készítsd el a tsconfig.json fájlt.
+Állítsd be, hogy a ts fájlok mappája a "source", míg a js fájlok helye a "public" mappa legyen,
+a fordítási mód pedig a legújabb JS verzió.
+Hozz létre egy app.ts fájlt a megfelelő mappában.
+
+Készíts egy Product interface-t a következő tulajdonságokkal:
+elnevezés, termék ID (csak olvasható), leírás, gyártási költség, haszonkulcs,
+áfakulcs (csak 15 vagy 25 százalék lehet), bruttó ár (opcionális), eladott darabszám.
+
+Készíts egy függvényt, amely beállítja a paraméterül kapott Product bruttó árát (egész számra kerekítve) a gyártási költség,
+a haszonkulcs és az áfa segítségével.
+
+Hozz létre tetszés szerint pár terméket, és próbáld ki a függvényt is rajtuk.
+
+Végezetül készíts egy függvényt, ami a paraméterként kapott termék lista alapján összesíti az eladott termékekből származó hasznot.
+A függvény visszatérési értéke legyen a haszon összege, de amennyiben a haszon mértéke meghaladja az 500 egységet, 
+a visszatérési érték legyen a következő szöveg "Alert, extraprofit: (az extraprofit összege)!"
+
+Teszteld ezen függvény működését is.
+
+Figyelj mindenütt a típusosság alkalmazására!
