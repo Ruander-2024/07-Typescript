@@ -106,3 +106,34 @@ console.log(activeUsers);
 
 const lotteryNums: Array<number> = [11, 35, 6, 44, 28];
 
+// 2D
+
+const board: string[][] = [
+    ['X', 'O'],
+    ['O', 'X'],
+]
+
+console.log(board);
+
+// Union types - vagylagos megjelölés
+
+let something: string | number = 3;
+something = '3';
+
+let stuffArray: string | number[] = [2, 3]
+stuffArray = 'something'
+
+let stuffArray2: (string | number)[] = ['2', 3]
+
+let otherStuffArray: string[] | number[] = ['2', '3']
+otherStuffArray = [2, 3]
+
+function calcTax(price: string | number, tax: number): number{
+    if(typeof price === 'string'){
+        price = parseFloat(price.replace('HUF', ''));
+    }
+    return price * tax
+}
+
+console.log(calcTax('2040', 1.33));
+
