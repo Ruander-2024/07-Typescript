@@ -69,10 +69,33 @@ console.log(random(1));
 console.log(random(1));
 console.log(random(1));
 console.log(' --- Random function --- ');
-// Type with Array 
+// Type with Array
 var inactiveUsers = [];
-// inactiveUsers.push('Zsuzsi');
+// inactiveUsers.push('Zsuszi');
 var activeUsers = ['Laci'];
+// activeUsers.push(34);
 activeUsers.push('34');
-activeUsers.push('Zsuzsi');
+activeUsers.push('Zsuszi');
 console.log(activeUsers);
+var lotteryNums = [11, 35, 6, 44, 28];
+// 2D
+var board = [
+    ['X', 'O'],
+    ['O', 'X'],
+];
+console.log(board);
+// Union types - vagylagos megjelölés
+var something = 3;
+something = '3';
+var stuffArray = [2, 3];
+stuffArray = 'something';
+var stuffArray2 = ['2', 3];
+var otherStuffArray = ['2', '3'];
+otherStuffArray = [2, 3];
+function calcTax(price, tax) {
+    if (typeof price === 'string') {
+        price = parseFloat(price.replace('HUF', ''));
+    }
+    return price * tax;
+}
+console.log(calcTax('2040', 1.33));
