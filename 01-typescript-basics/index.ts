@@ -148,3 +148,77 @@ console.log(mood);
 type DayOfWeekend = 'Saturday' | 'Sunday';
 
 let bestDay : DayOfWeekend = 'Saturday';
+
+type Coordinate = {
+    lat: number;
+    long: number;
+}
+
+let BpCoords: Coordinate = {
+    lat: 24.35,
+    long: 13.89
+}
+
+// Objektumok tipussal - metódusok
+
+const zsuszi = {
+    name: 'Zsuszi',
+    breed: 'fecskefarkú terrier',
+    age: 28
+};
+
+function catGreet(cat: {name: string; breed: string}): string{
+    return `Hi, your cat is ${cat.name}, with breed ${cat.breed}`;
+}
+
+console.log(catGreet({name: 'Dzsolettó', breed: 'domestic cat'}));
+
+// console.log(catGreet({name: 'Dzsolettó', breed: 'domestic cat', color: 'grey'}));
+
+type CatType = {
+    name: string,
+    breed: string
+};
+
+const kormi: CatType = {
+    name: 'Kormi',
+    breed: 'domestic'
+}
+
+function catGreetWithType(cat: CatType): string{
+    return `Hi, your cat is ${cat.name}, with breed ${cat.breed}`;
+}
+
+console.log(catGreetWithType(kormi));
+
+
+interface CatInterface {
+    name: string,
+    breed: string
+}
+
+interface CatInterface {
+    age: number,
+    sayMeow(): string,
+    purrEffect: () => string,
+    numOfLives?: number,
+    readonly chipNum: number
+}
+
+const dzsennifer: CatInterface = {
+    name:'dzsennifer',
+    breed: 'Lakatos',
+    age: 25,
+    sayMeow() {
+        return 'Meow'
+    },
+    purrEffect() {
+        return 'prrrrrrrrrrr'
+    },
+    numOfLives: 1,
+    chipNum: 5645642
+};
+
+//Leszármazás
+
+interface

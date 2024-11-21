@@ -104,3 +104,40 @@ var mood = 'Happy'; //csak sad és happy értéket fogad el
 mood = 'sad';
 console.log(mood);
 var bestDay = 'Saturday';
+var BpCoords = {
+    lat: 24.35,
+    long: 13.89
+};
+// Objektumok tipussal - metódusok
+var zsuszi = {
+    name: 'Zsuszi',
+    breed: 'fecskefarkú terrier',
+    age: 28
+};
+function catGreet(cat) {
+    return "Hi, your cat is ".concat(cat.name, ", with breed ").concat(cat.breed);
+}
+console.log(catGreet({ name: 'Dzsolettó', breed: 'domestic cat' }));
+var kormi = {
+    name: 'Kormi',
+    breed: 'domestic'
+};
+function catGreetWithType(cat) {
+    return "Hi, your cat is ".concat(cat.name, ", with breed ").concat(cat.breed);
+}
+console.log(catGreetWithType(kormi));
+var dzsennifer = {
+    name: 'dzsennifer',
+    breed: 'Lakatos',
+    age: 25,
+    sayMeow: function () {
+        return 'Meow';
+    },
+    purrEffect: function () {
+        return 'prrrrrrrrrrr';
+    },
+    numOfLives: 1,
+    chipNum: 5645642
+};
+//Leszármazás
+interface;
