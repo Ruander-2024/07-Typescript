@@ -250,3 +250,35 @@ myCats.push(kormi);
 myCats.push(chewie)
 
 console.table(myCats);
+
+
+// ENUM
+
+enum OrderStatus {
+    PENDING,
+    SHIPPED,
+    DELIVERED,
+    RETURNED
+}
+
+const myOrderStatus = OrderStatus.RETURNED;
+console.log(myOrderStatus);
+console.log(OrderStatus.PENDING);
+
+function isDelivered(status: OrderStatus): boolean{
+    return status === OrderStatus.DELIVERED;
+}
+
+enum ArrowKeys {
+    UP = 'up',
+    DOWN = 'down',
+    RIGHT = 'right',
+    LEFT = 'left',
+    EROOR = 404
+}
+
+let direction: string = 'up';
+
+if(direction === ArrowKeys.UP){
+    console.log('OK');
+}

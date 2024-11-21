@@ -152,3 +152,29 @@ var myCats = [];
 myCats.push(kormi);
 myCats.push(chewie);
 console.table(myCats);
+// ENUM
+var OrderStatus;
+(function (OrderStatus) {
+    OrderStatus[OrderStatus["PENDING"] = 0] = "PENDING";
+    OrderStatus[OrderStatus["SHIPPED"] = 1] = "SHIPPED";
+    OrderStatus[OrderStatus["DELIVERED"] = 2] = "DELIVERED";
+    OrderStatus[OrderStatus["RETURNED"] = 3] = "RETURNED";
+})(OrderStatus || (OrderStatus = {}));
+var myOrderStatus = OrderStatus.RETURNED;
+console.log(myOrderStatus);
+console.log(OrderStatus.PENDING);
+function isDelivered(status) {
+    return status === OrderStatus.DELIVERED;
+}
+var ArrowKeys;
+(function (ArrowKeys) {
+    ArrowKeys["UP"] = "up";
+    ArrowKeys["DOWN"] = "down";
+    ArrowKeys["RIGHT"] = "right";
+    ArrowKeys["LEFT"] = "left";
+    ArrowKeys[ArrowKeys["EROOR"] = 404] = "EROOR";
+})(ArrowKeys || (ArrowKeys = {}));
+var direction = 'up';
+if (direction === ArrowKeys.UP) {
+    console.log('OK');
+}
