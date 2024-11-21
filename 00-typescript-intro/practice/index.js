@@ -99,3 +99,83 @@ function calcTax(price, tax) {
     return price * tax;
 }
 console.log(calcTax('2040', 1.33));
+// Literal type
+var mood = 'Happy'; // Csak Sad és Happy értéket fogad el
+mood = 'Sad';
+// mood = 'Satisfied'
+console.log(mood);
+var bestDay = 'Saturday';
+var BpCoords = {
+    lat: 24.35,
+    long: 13.89
+};
+// Objektumok tipussal - metódusok
+var zsuszi = {
+    name: 'Zsuszi',
+    breed: 'fecskefarkú terrier',
+    age: 28
+};
+function catGreet(cat) {
+    return "Hi your cat is ".concat(cat.name, ", with breed ").concat(cat.breed);
+}
+console.log(catGreet({ name: 'Dzsolettó', breed: 'domestic cat' }));
+var korwi = {
+    name: 'Korwi',
+    breed: 'domestic'
+};
+function catGreetWithType(cat) {
+    return "Hi, your cat is ".concat(cat.name, ", with breed ").concat(cat.breed);
+}
+console.log(catGreetWithType(korwi));
+var dzsennifer = {
+    name: 'Dzsennifer',
+    breed: 'lakatos',
+    age: 25,
+    sayMeow: function () {
+        return 'Meow';
+    },
+    purrEffect: function () {
+        return 'prrrrrrrrrrrrrr';
+    },
+    numOfLives: 1,
+    chipNum: 5773457
+};
+var chewie = {
+    name: 'Chewie',
+    age: 3,
+    breed: 'German Sheppard',
+    bark: function () {
+        return ' Wau';
+    },
+    job: 'drug sniffer'
+};
+var myCats = [];
+myCats.push(korwi);
+myCats.push(chewie);
+console.log(myCats);
+// ENUM
+var OrderStatus;
+(function (OrderStatus) {
+    OrderStatus[OrderStatus["PENDING"] = 0] = "PENDING";
+    OrderStatus[OrderStatus["SHIPPED"] = 1] = "SHIPPED";
+    OrderStatus[OrderStatus["DELIVERED"] = 2] = "DELIVERED";
+    OrderStatus[OrderStatus["RETURNED"] = 3] = "RETURNED";
+})(OrderStatus || (OrderStatus = {}));
+var myOrderStatus = OrderStatus.RETURNED;
+console.log(myOrderStatus);
+console.log(OrderStatus.PENDING);
+function isDelivered(status) {
+    return status == OrderStatus.DELIVERED;
+}
+var ArrowKeys;
+(function (ArrowKeys) {
+    ArrowKeys["UP"] = "up";
+    ArrowKeys["DOWN"] = "down";
+    ArrowKeys["RIGHT"] = "right";
+    ArrowKeys["LEFT"] = "left";
+    ArrowKeys[ArrowKeys["ERROR"] = 404] = "ERROR";
+})(ArrowKeys || (ArrowKeys = {}));
+var direction = 'up';
+if (direction === ArrowKeys.UP) {
+    console.log('OK');
+}

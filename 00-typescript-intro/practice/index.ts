@@ -137,3 +137,148 @@ function calcTax(price: string | number, tax: number): number{
 
 console.log(calcTax('2040', 1.33));
 
+// Literal type
+
+let mood: 'Happy' | 'Sad' = 'Happy'; // Csak Sad és Happy értéket fogad el
+mood = 'Sad';
+// mood = 'Satisfied'
+
+console.log(mood);
+
+type DayOfWeekend = 'Saturday' | 'Sunday';
+
+let bestDay: DayOfWeekend = 'Saturday'
+
+type Coordinate = {
+    lat: number;
+    long: number;
+}
+
+let BpCoords: Coordinate = {
+    lat: 24.35,
+    long: 13.89
+}
+
+// Objektumok tipussal - metódusok
+
+const zsuszi = {
+    name: 'Zsuszi',
+    breed: 'fecskefarkú terrier',
+    age: 28
+};
+
+function catGreet(cat: {name: string; breed: string}): string{
+    return `Hi your cat is ${cat.name}, with breed ${cat.breed}`;
+}
+
+console.log(catGreet({name: 'Dzsolettó', breed: 'domestic cat'}));
+
+// console.log(catGreet({name: 'Dzsolettó', breed: 'domestic cat', color: 'grey'}));
+
+type CatType = {
+    name: string,
+    breed: string
+};
+
+const korwi: CatType = {
+    name: 'Korwi',
+    breed: 'domestic'
+}
+
+function catGreetWithType(cat: CatType): string{
+    return `Hi, your cat is ${cat.name}, with breed ${cat.breed}`;
+}
+
+console.log(catGreetWithType(korwi));
+
+interface CatInterface {
+    name: string;
+    breed: string;
+}
+
+interface CatInterface {
+    age: number;
+    sayMeow() : string;
+    purrEffect: () => string;
+    numOfLives?: number;
+    readonly chipNum: number;
+}
+
+const dzsennifer: CatInterface = {
+    name: 'Dzsennifer',
+    breed: 'lakatos',
+    age: 25,
+    sayMeow() {
+        return 'Meow';
+    },
+    purrEffect() {
+        return 'prrrrrrrrrrrrrr';
+    },
+    numOfLives: 1,
+    chipNum: 5773457
+};
+
+// leszármazás
+
+interface Animal{
+    breed: string;
+}
+
+interface Dog{
+    name: string;
+    age: number;
+    bark() : string;
+}
+
+interface ServiceDog extends Dog, Animal{
+    job: 'drug sniffer' | 'bomb' | 'guide';
+}
+
+const chewie: ServiceDog = {
+    name: 'Chewie',
+    age: 3,
+    breed: 'German Sheppard',
+    bark() {
+        return ' Wau';
+    },
+    job: 'drug sniffer'
+};
+
+const myCats: CatType[] = [];
+myCats.push(korwi);
+myCats.push(chewie)
+
+console.log(myCats);
+
+// ENUM
+
+enum OrderStatus {
+    PENDING,
+    SHIPPED,
+    DELIVERED,
+    RETURNED
+}
+
+const myOrderStatus = OrderStatus.RETURNED;
+console.log(myOrderStatus);
+console.log(OrderStatus.PENDING);
+
+function isDelivered(status: OrderStatus): boolean{
+    return status == OrderStatus.DELIVERED;
+}
+
+enum ArrowKeys {
+    UP = 'up',
+    DOWN = 'down',
+    RIGHT = 'right',
+    LEFT = 'left',
+    ERROR = 404
+}
+
+let direction: string = 'up';
+
+if(direction === ArrowKeys.UP){
+    console.log('OK');
+    
+}
+
