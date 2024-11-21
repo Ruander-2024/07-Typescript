@@ -44,5 +44,49 @@ var FullTimeEmployee = /** @class */ (function (_super) {
         _this.salary = salary;
         return _this;
     }
+    FullTimeEmployee.prototype.getPay = function () {
+        return this.salary;
+    };
+    Object.defineProperty(FullTimeEmployee.prototype, "department", {
+        get: function () {
+            return this._department;
+        },
+        set: function (dep) {
+            this._department = dep;
+        },
+        enumerable: false,
+        configurable: true
+    });
     return FullTimeEmployee;
 }(Employee));
+var user1 = new FullTimeEmployee('Jane Doe', 3671, '1989-06-01', 'Business', 5210);
+console.log('--Jane--');
+console.log(user1.department);
+console.log(user1.company);
+user1.department = 'FE-IT';
+console.log(user1);
+// Abstract osztály
+// nem példányosítható
+// gyüjtőfogalom, belőle le lehet származni
+var FarmAnimal = /** @class */ (function () {
+    function FarmAnimal(breed) {
+        this.breed = breed;
+    }
+    // classon belül érhető el
+    // példányon keresztül nem érthető el
+    FarmAnimal.farmName = 'Joe Farmer Ranch';
+    return FarmAnimal;
+}());
+var Cow = /** @class */ (function (_super) {
+    __extends(Cow, _super);
+    function Cow(breed, name, feed) {
+        var _this = _super.call(this, breed) || this;
+        _this.name = name;
+        _this.feed = feed;
+        return _this;
+    }
+    Cow.prototype.makeNoise = function () {
+        return 'Muuuuuuuuuuuu';
+    };
+    return Cow;
+}(FarmAnimal));
