@@ -139,5 +139,16 @@ var dzsennifer = {
     numOfLives: 1,
     chipNum: 5645642
 };
-//Leszármazás
-interface;
+var chewie = {
+    name: 'Chewie',
+    age: 3,
+    breed: 'German Shepherd',
+    bark: function () {
+        return 'wau';
+    },
+    job: 'drug sniffer'
+};
+var myCats = [];
+myCats.push(kormi);
+myCats.push(chewie);
+console.table(myCats);

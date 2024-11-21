@@ -221,4 +221,32 @@ const dzsennifer: CatInterface = {
 
 //Leszármazás
 
-interface
+interface Animal  {
+    breed: string
+}
+
+interface Dog{
+    name: string,
+    age: number,
+    bark(): string;
+}
+
+interface ServiceDog extends Dog, Animal{
+    job: 'drug sniffer' | 'bomb sniffer' | 'guide';
+}
+
+const chewie: ServiceDog = {
+    name : 'Chewie',
+    age: 3,
+    breed: 'German Shepherd',
+    bark() {
+        return 'wau';
+    },
+    job: 'drug sniffer'
+}
+
+const myCats: CatType[] = [];
+myCats.push(kormi);
+myCats.push(chewie)
+
+console.table(myCats);
