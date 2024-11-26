@@ -60,11 +60,11 @@ var FullTimeEmployee = /** @class */ (function (_super) {
     return FullTimeEmployee;
 }(Employee));
 var user1 = new FullTimeEmployee('Jane Doe', 3671, '1989-06-01', 'Business', 5210);
-console.log('--Jane--');
-console.log(user1.department);
-console.log(user1.company);
+console.table('--Jane--');
+console.table(user1.department);
+console.table(user1.company);
 user1.department = 'FE-IT';
-console.log(user1);
+console.table(user1);
 // Abstract osztály
 // nem példányosítható
 // gyüjtőfogalom, belőle le lehet származni
@@ -77,6 +77,7 @@ var FarmAnimal = /** @class */ (function () {
     FarmAnimal.farmName = 'Joe Farmer Ranch';
     return FarmAnimal;
 }());
+console.table(FarmAnimal.farmName);
 var Cow = /** @class */ (function (_super) {
     __extends(Cow, _super);
     function Cow(breed, name, feed) {
@@ -90,3 +91,24 @@ var Cow = /** @class */ (function (_super) {
     };
     return Cow;
 }(FarmAnimal));
+var Chicken = /** @class */ (function (_super) {
+    __extends(Chicken, _super);
+    function Chicken(breed, name, feed, eggPerDay) {
+        var _this = _super.call(this, breed) || this;
+        _this.name = name;
+        _this.feed = feed;
+        _this.eggPerDay = eggPerDay;
+        return _this;
+    }
+    Chicken.prototype.makeNoise = function () {
+        return 'Kot-kot-kot';
+    };
+    return Chicken;
+}(FarmAnimal));
+var mcNuggets = new Chicken('Kendermagos', 'Mcnuggets', 'mixed', 3);
+var riska = new Cow('Tarka', 'Riska', 'carnivore');
+console.table(mcNuggets.feed);
+var myFarm2 = [mcNuggets];
+var myFarm3 = [mcNuggets, riska];
+var myFarm4 = [mcNuggets, riska];
+var myFarm5 = [mcNuggets];
