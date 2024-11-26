@@ -91,6 +91,8 @@ class Cow extends FarmAnimal implements Feeding{
 
 const tehen = new Cow('tarka', 'Boci', 'herbivore'); // Cow példány
 
+console.log(Cow.farmName);
+
 // console.log(tehen.farmName);  A Cow class-on keresztül elérem a static farmName tulajdonságot, de a tehen példányon már nem
 
 type FeedType = 'herbivore' | 'carnivore' | 'mixed';

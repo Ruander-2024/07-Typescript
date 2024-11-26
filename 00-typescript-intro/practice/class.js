@@ -92,6 +92,7 @@ var Cow = /** @class */ (function (_super) {
     return Cow;
 }(FarmAnimal));
 var tehen = new Cow('tarka', 'Boci', 'herbivore'); // Cow példány
+console.log(Cow.farmName);
 var Chicken = /** @class */ (function (_super) {
     __extends(Chicken, _super);
     function Chicken(breed, name, feed, eggPerDay) {
