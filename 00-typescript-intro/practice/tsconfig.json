@@ -6,6 +6,6 @@
       "rootDir": "./source",
       "strict": true
     },
-    "include": ["source/**/*"]
+    "include": ["source/**/*", "public/app.js"]
   }
   
