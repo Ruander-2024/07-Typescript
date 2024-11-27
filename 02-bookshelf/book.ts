@@ -1,22 +1,26 @@
 export class Book {
+    private _bookWeight: number;
+
     constructor(
         private _title: string,
         private _author: string,
         private _releaseYear: Date,
-        private _numberOfPages: number
-    ){
-        this._bookWeight = _numberOfPages * 10 + 100 ;
+        private _numberOfPages: number,)
+        
+        
+    {
+        this._bookWeight = _numberOfPages * 10 + 100;
     }
 
 
-    public getBookInfo(): stirng {
+    public getBookInfo(): string {
         return `
         Title: ${this._title},
         Author: ${this._author},
-        Year os release ${this._releaseYear.getFullYear()},
+        Year of release ${this._releaseYear.getFullYear()},
         Number of pages: ${this._numberOfPages},
         Book weight: ${this._bookWeight},
-        `
+        `;
     }
 
     get title(): string {
@@ -43,7 +47,10 @@ export class Book {
 
 
 
-console.log('');
+const book = new Book("The Great Gatsby", "F. Scott Fitzgerald", new Date(1925, 0, 10), 180);
+
+console.log(book.getBookInfo());
+
 
 
 
