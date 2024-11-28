@@ -39,10 +39,10 @@ var Bookshelf = /** @class */ (function () {
     };
     Bookshelf.prototype.printBooks = function () {
         if (this._books.length === 0) {
-            console.log('Empty bookshelf');
+            console.table('Empty bookshelf');
             ;
         }
-        this._books.forEach(function (book) { return console.log(book.getBookInfo()); });
+        this._books.forEach(function (book) { return console.table(book.getBookInfo()); });
     };
     return Bookshelf;
 }());

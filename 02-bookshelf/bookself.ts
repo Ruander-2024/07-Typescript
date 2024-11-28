@@ -41,10 +41,10 @@ public getAuthorOfMostWrittenPages():string{
 }
 public printBooks(): void{
     if(this._books.length === 0){
-        console.log( 'Empty bookshelf');
+        console.table( 'Empty bookshelf');
         ;
     }
-    this._books.forEach((book)=> console.log(book.getBookInfo()))
+    this._books.forEach((book)=> console.table(book.getBookInfo()))
 }
 
 }
