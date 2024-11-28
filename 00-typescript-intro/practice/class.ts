@@ -27,7 +27,7 @@ class FullTimeEmployee extends Employee{
         fullName: string,
         employeeId: number,
         dateOfBirth: string,
-        department : string,
+        department: string,
         private salary: number
     ) {
         super(fullName, employeeId, dateOfBirth, department)
@@ -48,16 +48,16 @@ class FullTimeEmployee extends Employee{
 
 const user1: FullTimeEmployee = new FullTimeEmployee('Jane Doe', 3671, '1989-06-01', 'Business', 5210);
 
-console.log('--Jane--');
-console.log(user1.department);
-console.log(user1.company);
+console.table('--Jane--');
+console.table(user1.department);
+console.table(user1.company);
 user1.department = 'FE-IT'
-console.log(user1);
+console.table(user1);
 
 // Abstract osztály
 // nem példányosítható
 
-// gyűjtőfogalom, belőle le lehet származni
+// gyüjtőfogalom, belőle le lehet származni
 
 abstract class FarmAnimal {
     constructor(
@@ -66,10 +66,12 @@ abstract class FarmAnimal {
 
     abstract makeNoise(): string
 
-    // classom belül érhető el
-    // példányom keresztül nem érthető el
+    // classon belül érhető el
+    // példányon keresztül nem érthető el
     static farmName: string = 'Joe Farmer Ranch';
 }
+
+console.table(FarmAnimal.farmName)
 
 class Cow extends FarmAnimal implements Feeding{
     constructor(
@@ -91,5 +93,31 @@ interface Feeding {
     feed: FeedType
 }
 
+interface EggProd{
+    eggPerDay : number;
+}
+
+class Chicken extends FarmAnimal implements Feeding, EggProd{
+    constructor (
+        breed: string,
+        public name: string,
+        public feed: FeedType,
+        public eggPerDay: number
+    ){
+        super(breed)
+    }
+    makeNoise(): string{
+        return 'Kot-kot-kot';
+    }
+}
+
+const mcNuggets: Chicken = new Chicken('Kendermagos', 'Mcnuggets', 'mixed', 3)
+const riska: Cow = new Cow('Tarka', 'Riska','carnivore' )
 
 
+console.table(mcNuggets.feed)
+
+const myFarm2: Chicken[] = [mcNuggets]
+const myFarm3: Cow[] = [mcNuggets, riska]
+const myFarm4: Feeding[] = [mcNuggets, riska]
+const myFarm5: EggProd[] = [mcNuggets]
