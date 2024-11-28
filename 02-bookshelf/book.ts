@@ -1,5 +1,5 @@
 export class Book {
-    private _bookWeight: number;
+        private _bookWeight: number;
 
     constructor(
         private _title: string,
@@ -47,7 +47,7 @@ export class Book {
 
 
 
-const book = new Book("The Great Gatsby", "F. Scott Fitzgerald", new Date(1925, 0, 10), 180);
+const book = new Book("The Great Gatsby", "F. Scott Fitzgerald", new Date(1925), 180);
 
 console.log(book.getBookInfo());
 

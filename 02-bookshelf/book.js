@@ -50,5 +50,5 @@ var Book = /** @class */ (function () {
     return Book;
 }());
 exports.Book = Book;
-var book = new Book("The Great Gatsby", "F. Scott Fitzgerald", new Date(1925, 0, 10), 180);
+var book = new Book("The Great Gatsby", "F. Scott Fitzgerald", new Date(1925), 180);
 console.log(book.getBookInfo());
