@@ -37,3 +37,6 @@ Az állomás tudja, hogy milyen űrhajói vannak, és az alábbi metódusai vann
 - `spacefight(damage: int)`, ami csatába küldi az összes űrhajót. Visszatérési értékként visszaadja a teljes flotta sebzését, és miután ezt kiszámolta, minden űrhajó sérül annyit, ami a paraméterben átadott sebzés. Minden olyan űrhajó, ami aktuális tartóssága 0-ra csökken, elpusztult, és el kell távolítani az űrállomásról.
 
 - `getStatus()`, ami visszaadja az űrhajók státuszát egy string listában
+
+
+
