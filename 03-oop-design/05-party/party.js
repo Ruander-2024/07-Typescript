@@ -18,6 +18,11 @@ var Party = /** @class */ (function () {
             this.heroes.forEach(function (hero) { return hero.pay(amount); });
         }
     };
+    Party.prototype.getStatus = function () {
+        return this.heroes.length > 0
+            ? this.heroes.map(function (hero) { return hero.status(); })
+            : 'No heroes';
+    };
     return Party;
 }());
 exports.Party = Party;
