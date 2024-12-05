@@ -50,3 +50,4 @@ export class Warlock extends Hero{
         this._money = this._money += Math.floor(amount * 1.1);   // this._money += Math.floor(amount * 1.1)
     }
 }
+

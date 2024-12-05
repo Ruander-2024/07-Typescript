@@ -18,4 +18,14 @@ export class Party{
             this.heroes.forEach(hero => hero.pay(amount));
         }
     }
+
+    public getStatus(): string | string []{
+        return this.heroes.length > 0
+        ? this.heroes.map(hero => hero.status())
+        : 'No heroes';
 }
+
+
+}
+
+
