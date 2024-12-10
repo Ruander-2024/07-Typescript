@@ -34,7 +34,7 @@ console.log(myAquarium.getStatus());
 myAquarium.feed(10);
 console.log(myAquarium);
 
-myAquarium.removeFish();
+// myAquarium.removeFish();
 console.log(myAquarium);
 
 console.log(myAquarium.getStatus());
